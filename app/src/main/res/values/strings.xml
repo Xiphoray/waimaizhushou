@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">外卖助手</string>
+    <string name="lists">订单</string>
+    <string name="roadlines">路线规划</string>
+    <string name="sendman">派送中</string>
+    <string name="messages">消息</string>
+    <string name="person">个人中心</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_lists"
+        android:icon="@drawable/ic_action_lists"
+        android:title="@string/lists"/>
+
+    <item
+        android:id="@+id/navigation_roadlines"
+        android:icon="@drawable/ic_action_roadlines"
+        android:title="@string/roadlines"/>
+
+    <item
+        android:id="@+id/navigation_sendman"
+        android:icon="@drawable/ic_action_sendman"
+        android:title="@string/sendman"/>
+
+    <item
+        android:id="@+id/navigation_messages"
+        android:icon="@drawable/ic_action_messages"
+        android:title="@string/messages"/>
+
+    <item
+        android:id="@+id/navigation_person"
+        android:icon="@drawable/ic_action_person"
+        android:title="@string/person"/>
+
+</menu>
