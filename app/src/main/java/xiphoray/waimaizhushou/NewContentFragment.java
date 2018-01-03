@@ -28,6 +28,7 @@ public class NewContentFragment extends android.support.v4.app.Fragment implemen
     }
 
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public boolean onBackPressed()
