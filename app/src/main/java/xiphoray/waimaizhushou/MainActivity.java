@@ -1,18 +1,22 @@
 package xiphoray.waimaizhushou;
 
+import android.app.FragmentManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
 
     private ViewPager viewPager;
     private MenuItem menuItem;
-
+    private long exitTime = 0;
+    private FragmentManager fManager = null;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -39,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
-
+    public interface FragmentBackHandler {
+        boolean onBackPressed();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -63,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     navigation.getMenu().getItem(0).setChecked(false);
                 }
                 menuItem = navigation.getMenu().getItem(position);
+
                 menuItem.setChecked(true);
             }
 
@@ -81,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(BaseFragment.newInstance("消息"));
         adapter.addFragment(BaseFragment.newInstance("个人中心"));
         viewPager.setAdapter(adapter);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    public void onBackPressed() {
+        if (!BackHandlerHelper.handleBackPress(this)) {
+            super.onBackPressed();
+        }
     }
 
 }
