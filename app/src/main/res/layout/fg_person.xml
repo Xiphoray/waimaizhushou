@@ -12,8 +12,13 @@
         android:layout_height="72dp"
         android:orientation="horizontal">
 
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"/>
+
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0"
@@ -44,15 +49,17 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/rider"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="viewStart"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     android:typeface="sans"
                     tools:text="@string/app_name"/>
@@ -64,7 +71,13 @@
 
     <ListView
         android:id="@+id/list_setting"
+        style="@style/Widget.AppCompat.Light.ListView.DropDown"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:addStatesFromChildren="false"
+        android:clipChildren="false"
+        android:entries="@drawable/ic_action_lists"
+        android:fadeScrollbars="false"
+        android:headerDividersEnabled="false"/>
 
 </LinearLayout>
