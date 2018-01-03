@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by Jay on 2015/9/6 0006.
- */
+
 public class NewContentFragment extends android.support.v4.app.Fragment implements MainActivity.FragmentBackHandler {
 
     @SuppressLint("ValidFragment")
@@ -21,7 +19,7 @@ public class NewContentFragment extends android.support.v4.app.Fragment implemen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_content, container, false);
-        TextView txt_content = (TextView) view.findViewById(R.id.txt_content);
+        TextView txt_content = view.findViewById(R.id.txt_content);
         //getArgument获取传递过来的Bundle对象
         txt_content.setText(getArguments().getString("content"));
         return view;

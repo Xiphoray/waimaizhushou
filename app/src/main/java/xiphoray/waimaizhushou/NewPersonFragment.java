@@ -12,16 +12,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Jay on 2015/9/6 0006.
- */
 @SuppressLint("ValidFragment")
 public class NewPersonFragment extends android.support.v4.app.Fragment implements AdapterView.OnItemClickListener {
     private android.support.v4.app.FragmentManager fManager;
     private ArrayList<SettingPerson> datas;
-    private ListView list_setting;
-    private ImageView logo;
-    private TextView Name;
 
     public NewPersonFragment(android.support.v4.app.FragmentManager fManager, ArrayList<SettingPerson> datas) {
         this.fManager = fManager;
@@ -31,13 +25,14 @@ public class NewPersonFragment extends android.support.v4.app.Fragment implement
 
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_person, container, false);
-        list_setting = (ListView) view.findViewById(R.id.list_setting);
-        Name = view.findViewById(R.id.name);
-        logo = view.findViewById(R.id.logo);
-        Name.setText("xxxx");
+        ListView list_setting = view.findViewById(R.id.list_setting);
+        TextView name = view.findViewById(R.id.name);
+        ImageView logo = view.findViewById(R.id.logo);
+        name.setText("xxxx");
         logo.setImageResource(R.mipmap.ic_launcher_round);
         PersonAdapter myAdapter = new PersonAdapter(datas, getActivity());
         list_setting.setAdapter(myAdapter);

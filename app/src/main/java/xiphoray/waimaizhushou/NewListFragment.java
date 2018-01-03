@@ -10,14 +10,10 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Jay on 2015/9/6 0006.
- */
 @SuppressLint("ValidFragment")
 public class NewListFragment extends android.support.v4.app.Fragment implements AdapterView.OnItemClickListener {
     private android.support.v4.app.FragmentManager fManager;
     private ArrayList<Data> datas;
-    private ListView list_news;
 
     public NewListFragment(android.support.v4.app.FragmentManager fManager, ArrayList<Data> datas) {
         this.fManager = fManager;
@@ -30,7 +26,7 @@ public class NewListFragment extends android.support.v4.app.Fragment implements 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_newlist, container, false);
-        list_news = (ListView) view.findViewById(R.id.list_news);
+        ListView list_news = view.findViewById(R.id.list_news);
         MyAdapter myAdapter = new MyAdapter(datas, getActivity());
         list_news.setAdapter(myAdapter);
         list_news.setOnItemClickListener(this);

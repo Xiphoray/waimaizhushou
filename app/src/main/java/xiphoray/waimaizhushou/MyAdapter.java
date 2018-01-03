@@ -9,15 +9,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by Jay on 2015/9/6 0006.
- */
 public class MyAdapter extends BaseAdapter{
 
     private List<Data> mData;
     private Context mContext;
 
-    public MyAdapter(List<Data> mData, Context mContext) {
+    MyAdapter(List<Data> mData, Context mContext) {
         this.mData = mData;
         this.mContext = mContext;
     }
@@ -43,7 +40,7 @@ public class MyAdapter extends BaseAdapter{
         if(convertView == null){
             convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item,parent,false);
             viewHolder = new ViewHolder();
-            viewHolder.txt_item_title = (TextView) convertView.findViewById(R.id.txt_item_title);
+            viewHolder.txt_item_title = convertView.findViewById(R.id.txt_item_title);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();

@@ -1,6 +1,5 @@
 package xiphoray.waimaizhushou;
 
-import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +16,6 @@ public class MainActivity extends FragmentActivity {
     private ViewPager viewPager;
     private MenuItem menuItem;
     private long exitTime = 0;
-    private FragmentManager fManager = null;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -52,8 +50,8 @@ public class MainActivity extends FragmentActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        viewPager = findViewById(R.id.viewPager);
+        final BottomNavigationView navigation = findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

@@ -5,7 +5,7 @@ import android.support.annotation.RequiresApi;
 
 import java.util.List;
 
-public class BackHandlerHelper {
+class BackHandlerHelper {
 
     /**
      * 将back事件分发给 FragmentManager 中管理的子Fragment，如果该 FragmentManager 中的所有Fragment都
@@ -15,10 +15,10 @@ public class BackHandlerHelper {
      * @see #handleBackPress(NewContentFragment)
      * @see #handleBackPress(MainActivity)
      * @see #handleBackPress(BaseFragment)
-     * @param fragmentManager
+     * //@param fragmentManager
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static boolean handleBackPress(android.support.v4.app.FragmentManager  fragmentManager) {
+    private static boolean handleBackPress(android.support.v4.app.FragmentManager fragmentManager) {
         List<android.support.v4.app.Fragment> fragments = fragmentManager.getFragments();
 
         if (fragments == null) return false;
@@ -40,17 +40,17 @@ public class BackHandlerHelper {
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static boolean handleBackPress(NewContentFragment fragment) {
+    static boolean handleBackPress(NewContentFragment fragment) {
         return handleBackPress(fragment.getChildFragmentManager());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static boolean handleBackPress(MainActivity fragmentActivity) {
+    static boolean handleBackPress(MainActivity fragmentActivity) {
         return handleBackPress(fragmentActivity.getSupportFragmentManager());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static boolean handleBackPress(BaseFragment baseFragment)
+    static boolean handleBackPress(BaseFragment baseFragment)
     {
         return handleBackPress(baseFragment.getChildFragmentManager());
     }
@@ -60,7 +60,7 @@ public class BackHandlerHelper {
      *
      * @return 如果处理了back键则返回 <b>true</b>
      */
-    public static boolean isFragmentBackHandled(android.support.v4.app.Fragment fragment) {
+    private static boolean isFragmentBackHandled(android.support.v4.app.Fragment fragment) {
         return fragment != null
                 && fragment.isVisible()
                 && fragment.getUserVisibleHint() //for ViewPager
