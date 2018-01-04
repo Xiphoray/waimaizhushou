@@ -86,6 +86,7 @@ public class MainActivity extends FragmentActivity {
         adapter.addFragment(BaseFragment.newInstance("派送中"));
         adapter.addFragment(BaseFragment.newInstance("消息"));
         adapter.addFragment(BaseFragment.newInstance("个人中心"));
+        //viewPager.setOffscreenPageLimit(4);
         viewPager.setAdapter(adapter);
     }
 
