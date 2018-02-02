@@ -5,7 +5,7 @@ import android.support.annotation.RequiresApi;
 
 import java.util.List;
 
-class BackHandlerHelper {
+public class BackHandlerHelper {
 
     /**
      * 将back事件分发给 FragmentManager 中管理的子Fragment，如果该 FragmentManager 中的所有Fragment都

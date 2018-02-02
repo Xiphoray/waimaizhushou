@@ -1,7 +1,7 @@
 package xiphoray.waimaizhushou;
 
 
-class Data {
+public class Data {
 
     private String new_title;
     private String new_content;

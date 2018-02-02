@@ -1,13 +1,13 @@
 package xiphoray.waimaizhushou;
 
-class SettingPerson {
+public class SettingPerson {
 
     private String new_title;
     private String new_content;
 
 
 
-    SettingPerson(String new_title, String new_content) {
+    public SettingPerson(String new_title, String new_content) {
         this.new_title = new_title;
         this.new_content = new_content;
     }
